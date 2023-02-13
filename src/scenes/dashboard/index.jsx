@@ -7,7 +7,10 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
+import LineChart from "../../components/LineChart";
+import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
+import ProgressCircle from "../../components/ProgressCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -157,7 +160,9 @@ const Dashboard = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box height="250px" m="-20px 0 0 0"></Box>
+          <Box height="250px" m="-20px 0 0 0">
+            <LineChart isDashboard={true} />
+          </Box>
         </Box>
         <Box
           gridColumn="span 4"
@@ -226,6 +231,7 @@ const Dashboard = () => {
             alignItems="center"
             mt="25px"
           >
+            <ProgressCircle size="125" />
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
@@ -248,7 +254,9 @@ const Dashboard = () => {
           >
             Sales Quantity
           </Typography>
-          <Box height="250px" mt="-20px"></Box>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
         </Box>
         <Box
           gridColumn="span 4"
